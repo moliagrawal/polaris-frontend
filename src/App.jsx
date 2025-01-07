@@ -8,20 +8,20 @@ import LoginPage from "./Pages/Login.jsx";
 import Login from "./Pages/LoginPage.jsx";
 
 const App = () => {
-  const firebase=useFirebase();
+  const firebase = useFirebase();
   function ProtectedRoute({ children }) {
     if (!firebase.user) {
-        return <Navigate to="/login" />;
+      return <Navigate to="/login" />;
     }
     return children;
-}
+  }
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<ProtectedRoute><HomeScreen/></ProtectedRoute>} />
-        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/" element={<ProtectedRoute><HomeScreen /></ProtectedRoute>} />
+        <Route path="/login" element={<LoginPage />} />
 
-        <Route path="/quiz" element={<Quiz/>}/>
+        <Route path="/quiz" element={<Quiz />} />
       </Routes>
     </Router>
   );

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import "./Timer.css"; // Import the CSS file for styles
 
-const Timer = () => {
-  const [seconds, setSeconds] = useState(0);
+const Timer = ({ timer }) => {
+  // const [seconds, setSeconds] = useState(timer);
 
-  const timerRef = React.useRef(null);
+  // const timerRef = React.useRef(null);
 
-  if (timerRef.current === null) {
-    timerRef.current = setInterval(() => {
-      setSeconds((prevSeconds) => prevSeconds + 1);
-    }, 1000);
-  }
+  // if (timerRef.current === null) {
+  //   timerRef.current = setInterval(() => {
+  //     setSeconds((prevSeconds) => prevSeconds + 1);
+  //   }, 1000);
+  // }
 
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
@@ -35,7 +35,7 @@ const Timer = () => {
 
       {/* Display the formatted time */}
       <div className="timer-display text-white text-center">
-        <p className="text-l">{formatTime(seconds)}</p>
+        <p className="text-l">{formatTime(timer)}</p>
       </div>
     </div>
   );
