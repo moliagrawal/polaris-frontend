@@ -41,23 +41,25 @@ const LoginPage = () => {
   return (
     <div className="h-screen w-screen bg-gradient-to-b from-blue-800 to-black flex flex-col items-center justify-center relative overflow-hidden">
       <SparkleBackground />
-      <div className="relative z-10 flex flex-col items-center">
+      <div className="relative z-10 flex flex-col items-center px-4">
         <form
-          className="p-8 rounded-3xl shadow-2xl flex flex-col items-center border border-yellow-400"
+          className="p-6 md:p-8 rounded-3xl shadow-2xl flex flex-col items-center border border-yellow-400 w-full max-w-md"
           style={{
             background: "rgba(255, 255, 255, 0.2)",
             border: "2px solid rgba(255, 215, 0, 0.8)",
           }}
           onSubmit={handleLogin}
         >
-          <h2 className="text-yellow-400 text-3xl mb-8 font-bold glow-text">Welcome, Contestant!</h2>
+          <h2 className="text-yellow-400 text-2xl md:text-3xl mb-6 md:mb-8 font-bold glow-text text-center">
+            Welcome, Contestant!
+          </h2>
           <input
             type="text"
             name="username"
             placeholder="Username"
             value={formData.username}
             onChange={handleInputChange}
-            className="w-80 p-4 mb-5 rounded-xl bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 shadow-inner"
+            className="w-full max-w-sm p-3 md:p-4 mb-4 md:mb-5 rounded-xl bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 shadow-inner"
             required
           />
           <input
@@ -66,12 +68,12 @@ const LoginPage = () => {
             placeholder="Password"
             value={formData.password}
             onChange={handleInputChange}
-            className="w-80 p-4 mb-8 rounded-xl bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 shadow-inner"
+            className="w-full max-w-sm p-3 md:p-4 mb-6 md:mb-8 rounded-xl bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 shadow-inner"
             required
           />
           <button
             type="submit"
-            className={`bg-gradient-to-r from-yellow-500 to-yellow-300 hover:from-yellow-400 hover:to-yellow-200 text-black font-bold px-8 py-3 rounded-full shadow-lg w-72 transition-transform transform hover:scale-105 ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
+            className={`bg-gradient-to-r from-yellow-500 to-yellow-300 hover:from-yellow-400 hover:to-yellow-200 text-black font-bold px-6 py-3 md:px-8 md:py-3 rounded-full shadow-lg w-full max-w-xs transition-transform transform hover:scale-105 ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
             disabled={isSubmitting}
           >
             {isSubmitting ? "Logging in..." : "Login"}
@@ -79,6 +81,7 @@ const LoginPage = () => {
         </form>
       </div>
     </div>
+
   );
 };
 
